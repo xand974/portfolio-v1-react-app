@@ -1,0 +1,50 @@
+.intro {
+  height: 100vh;
+  display: flex;
+  .intro__left {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .intro__text {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      &--light {
+        font-weight: lighter;
+        margin-bottom: var(--intro-margin-bottom);
+        font-size: 2rem;
+      }
+      &--username {
+        margin-bottom: var(--intro-margin-bottom);
+        font-size: 3rem;
+        font-weight: bold;
+      }
+      &--job {
+        margin-bottom: var(--intro-margin-bottom);
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: var(--intro-green);
+      }
+      &--description {
+        line-height: 1.5;
+        color: gray;
+      }
+    }
+  }
+  .intro__right {
+    flex: 1;
+  }
+  .arrow--icon {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    font-size: 30px;
+    color: var(--intro-green);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--intro-dark-green),
+      0 0 10px var(--intro-light-green), 0 0 15px var(--intro-green);
+    cursor: pointer;
+  }
+}
