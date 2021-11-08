@@ -16,5 +16,11 @@
   --about-content-font-size: 1.2rem;
   --about-content-color: rgb(46, 46, 46);
 
-  /* #################ABOUT############*/
+  /* #################ProductList############*/
+  --product-list-bg: #000;
+  --product-list-box-shadow: -15px -10px 0 #7a5aec;
+  --product-list-box-shadow-dark: -25px -20px 0 #513ca0;
+  --product-list-box-shadow-darker: -35px -30px 0 #231a44;
+  --product-list-title-background: #a48cfc;
+  /* #################Product############*/
 }

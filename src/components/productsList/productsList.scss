@@ -1,5 +1,47 @@
 .products__list {
   height: 100vh;
-  overflow: hidden;
-  background: #000;
+  display: flex;
+
+  &__left {
+    position: relative;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    flex: 3;
+    background-color: #f1f1f1;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+    height: 100%;
+    &__container {
+      width: clamp(10%, 200px, 100%);
+      position: sticky;
+      left: 10%;
+      top: 5%;
+      height: clamp(10%, 300px, 100%);
+      z-index: 10;
+      &--img {
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        object-fit: cover;
+        transition: all 0.3s ease-in;
+        &:hover {
+          box-shadow: var(--product-list-box-shadow),
+            var(--product-list-box-shadow-dark),
+            var(--product-list-box-shadow-darker);
+        }
+      }
+    }
+    &--barre {
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      top: 0;
+      opacity: 0.3;
+      background: #000;
+      left: 50%;
+    }
+  }
+  &__right {
+    display: flex;
+    flex: 5;
+  }
 }
