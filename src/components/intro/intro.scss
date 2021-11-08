@@ -1,6 +1,8 @@
 .intro {
   height: 100vh;
   display: flex;
+  overflow: hidden;
+  background: var(--intro-bg-color);
   .intro__left {
     position: relative;
     flex: 1;
@@ -13,38 +15,48 @@
       width: 70%;
       &--light {
         font-weight: lighter;
-        margin-bottom: var(--intro-margin-bottom);
+        margin-bottom: var(--main-margin-bottom);
         font-size: 2rem;
+        color: var(--intro-main-text-color);
       }
       &--username {
-        margin-bottom: var(--intro-margin-bottom);
+        margin-bottom: var(--main-margin-bottom);
         font-size: 3rem;
         font-weight: bold;
+        color: var(--intro-main-text-color);
       }
       &--job {
-        margin-bottom: var(--intro-margin-bottom);
+        margin-bottom: var(--main-margin-bottom);
         font-size: 1.7rem;
         font-weight: bold;
-        color: var(--intro-green);
+        color: var(--intro-purple);
       }
       &--description {
-        line-height: 1.5;
-        color: gray;
+        line-height: var(--main-line-height);
+        color: var(--intro-main-text-color);
       }
     }
   }
   .intro__right {
     flex: 1;
+    position: relative;
+    .profile--img {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   .arrow--icon {
     position: absolute;
     bottom: 10%;
     left: 50%;
     font-size: 30px;
-    color: var(--intro-green);
+    color: var(--intro-purple);
     border-radius: 50%;
-    box-shadow: 0 0 5px var(--intro-dark-green),
-      0 0 10px var(--intro-light-green), 0 0 15px var(--intro-green);
+    box-shadow: 0 0 5px var(--intro-dark-purple),
+      0 0 10px var(--intro-light-purple), 0 0 15px var(--intro-purple);
     cursor: pointer;
   }
 }

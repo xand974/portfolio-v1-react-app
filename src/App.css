@@ -1,7 +1,20 @@
 :root {
+  --main-line-height: 1.5;
+  --main-margin-bottom: 30px;
+
   /* #################INTRO############*/
-  --intro-margin-bottom: 30px;
-  --intro-green: #00b500;
-  --intro-dark-green: rgb(0, 124, 0);
-  --intro-light-green: rgb(60, 255, 135);
+  --intro-bg-color: black;
+  --intro-purple: #7a5aec;
+  --intro-dark-purple: rgb(37, 0, 124);
+  --intro-light-purple: rgb(159, 107, 243);
+  --intro-main-text-color: rgb(255, 255, 255);
+
+  /* #################ABOUT############*/
+  --about-shape-color: #7a5aec;
+  --about-box-shadow-color: #7a5aec;
+  --about-title-font-size: 3rem;
+  --about-content-font-size: 1.2rem;
+  --about-content-color: rgb(46, 46, 46);
+
+  /* #################ABOUT############*/
 }

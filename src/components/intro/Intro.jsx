@@ -1,11 +1,9 @@
-import Shape from "../shape/Shape";
 import "./intro.scss";
 import { ArrowDownwardOutlined } from "@mui/icons-material";
-
+// import ProfilePicture from "../../images/ProfilePicture.png";
 export default function Intro() {
   return (
     <div className="intro">
-      <Shape bgColor="#00b500" />
       <div className="intro__left">
         <div className="intro__text">
           <h1 className="intro__text--light">My name is</h1>
@@ -20,7 +18,9 @@ export default function Intro() {
           <ArrowDownwardOutlined className="arrow--icon" />
         </div>
       </div>
-      <div className="intro__right"></div>
+      <div className="intro__right">
+        {/* <img className="profile--img" src={ProfilePicture} alt="" /> */}
+      </div>
     </div>
   );
 }
