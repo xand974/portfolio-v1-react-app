@@ -1,6 +1,7 @@
-.products__list {
+.transition {
   height: 100vh;
   display: flex;
+  position: relative;
 
   &__left {
     position: relative;
@@ -24,9 +25,9 @@
         object-fit: cover;
         transition: all 0.3s ease-in;
         &:hover {
-          box-shadow: var(--product-list-box-shadow),
-            var(--product-list-box-shadow-dark),
-            var(--product-list-box-shadow-darker);
+          box-shadow: var(--transition-box-shadow),
+            var(--transition-box-shadow-dark),
+            var(--transition-box-shadow-darker);
         }
       }
     }
@@ -43,5 +44,18 @@
   &__right {
     display: flex;
     flex: 5;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &--title {
+      font-size: 5rem;
+      margin-bottom: var(--main-margin-bottom);
+    }
+    &--content {
+      font-size: 2rem;
+      color: rgb(255, 255, 255);
+      background: #000;
+      padding: 5px 10px;
+    }
   }
 }
