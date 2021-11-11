@@ -1,8 +1,7 @@
-import { EmailOutlined, PhoneOutlined, PinOutlined } from "@mui/icons-material";
-import { useRef } from "react";
 import "./contact.scss";
 import emailjs from "emailjs-com";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { EmailOutlined, PhoneOutlined, PinOutlined } from "@mui/icons-material";
 
 export default function Contact() {
   const formRef = useRef();
