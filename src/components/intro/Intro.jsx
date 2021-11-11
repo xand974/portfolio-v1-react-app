@@ -1,6 +1,6 @@
 import "./intro.scss";
 import { ArrowDownwardOutlined } from "@mui/icons-material";
-// import ProfilePicture from "../../images/ProfilePicture.png";
+import ProfilePicture from "../../images/ProfilePicture.png";
 export default function Intro() {
   return (
     <div className="intro">
@@ -19,7 +19,7 @@ export default function Intro() {
         </div>
       </div>
       <div className="intro__right">
-        {/* <img className="profile--img" src={ProfilePicture} alt="" /> */}
+        <img className="profile--img" src={ProfilePicture} alt="" />
       </div>
     </div>
   );

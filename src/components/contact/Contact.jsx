@@ -2,9 +2,11 @@ import { EmailOutlined, PhoneOutlined, PinOutlined } from "@mui/icons-material";
 import { useRef } from "react";
 import "./contact.scss";
 import emailjs from "emailjs-com";
+import { useState } from "react";
 
 export default function Contact() {
   const formRef = useRef();
+  const [isDone, setIsDone] = useState(false);
 
   const handleForm = () => {
     emailjs
@@ -17,6 +19,7 @@ export default function Contact() {
       .then(
         (result) => {
           console.log(result.text);
+          setIsDone(true);
         },
         (error) => {
           console.log(error.text);
@@ -54,12 +57,7 @@ export default function Contact() {
           </div>
           <div className="form-input">
             <label htmlFor="email">Email</label>
-            <input
-              aria-errormessage="Seul une adresse mail valide est accepté"
-              type="email"
-              name="user_mail"
-              id="email"
-            />
+            <input type="email" name="user_mail" id="email" />
           </div>
           <div className="form-input">
             <label htmlFor="sujet">Sujet</label>
@@ -70,6 +68,11 @@ export default function Contact() {
             Envoyer
           </button>
         </form>
+        {isDone && (
+          <span>
+            Merci, votre demande sera traité dans les meilleurs délais
+          </span>
+        )}
       </div>
     </div>
   );
