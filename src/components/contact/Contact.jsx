@@ -6,24 +6,23 @@ import { EmailOutlined, PhoneOutlined, PinOutlined } from "@mui/icons-material";
 export default function Contact() {
   const formRef = useRef();
   const [isDone, setIsDone] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleForm = () => {
-    emailjs
-      .sendForm(
+  const handleForm = async () => {
+    try {
+      setLoading(true);
+      await emailjs.sendForm(
         process.env.REACT_APP_EMAIL_SERVICE_KEY,
         process.env.REACT_APP_EMAIL_TEMPLATE_ID,
         formRef.current,
         process.env.REACT_APP_EMAIL_USER_ID
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setIsDone(true);
-        },
-        (error) => {
-          console.log(error.text);
-        }
       );
+      setLoading(false);
+      setIsDone(true);
+    } catch (error) {
+      setLoading(false);
+      throw error;
+    }
   };
 
   return (
@@ -63,7 +62,11 @@ export default function Contact() {
             <input type="text" name="user_subject" id="sujet" />
           </div>
           <textarea name="message" placeholder="votre message"></textarea>
-          <button onClick={() => handleForm()} className="form-btn">
+          <button
+            disabled={loading}
+            onClick={() => handleForm()}
+            className="form-btn"
+          >
             Envoyer
           </button>
         </form>

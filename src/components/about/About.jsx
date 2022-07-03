@@ -9,23 +9,36 @@ export default function About() {
   const contentRef = useRef();
   const [mouseY, setMouseY] = useState(0);
   useEffect(() => {
-    // let options = {
-    //   root: aboutRef.current,
-    //   rootMargin: "-10% 0px",
-    //   threshold: 0,
-    // };
-    // window.addEventListener("scroll", (e) => {
-    //   setMouseY(window.scrollY);
-    // });
-    // const handleObserver = (items) => {
-    //   items.forEach((item) => {
-    //     item.target.style.transform = `translateY(${mouseY / 2}px)`;
-    //   });
-    // };
-    // const observer = new IntersectionObserver(handleObserver, options);
-    // observer.observe(contentRef?.current);
-  }, [aboutRef, contentRef, mouseY]);
+    if (!contentRef) return;
+    const options = {
+      root: aboutRef.current,
+      rootMargin: "-10%",
+      threshold: 0,
+    };
+    /**
+     *
+     * @param {IntersectionObserverEntry[]} items
+     */
+    const handleObserver = (items) => {
+      const entry = items[0].target;
+      const shapes = entry.querySelectorAll(".float--item--shape");
+      for (const shape of shapes) {
+        shape.style.transform = `translateY(${mouseY / 4}px)`;
+      }
+    };
+    const observer = new IntersectionObserver(handleObserver, options);
+    observer.observe(contentRef.current);
+  }, [mouseY]);
 
+  useEffect(() => {
+    const handleScroll = (e) => {
+      setMouseY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div className="about" ref={aboutRef}>
       <div className="about__left">
